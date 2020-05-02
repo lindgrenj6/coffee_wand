@@ -29,6 +29,6 @@ defmodule Covfefe.MixProject do
   end
 
   defp escript do
-    [ main_module: Covfefe.CLI ]
+    [ main_module: Covfefe ]
   end
 end
