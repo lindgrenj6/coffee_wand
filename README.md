@@ -1,21 +1,16 @@
-# Covfefe
+# ~~Covfefe~~ Coffee Wand
 
-**TODO: Add description**
+# TODO:
+- use docker library instead of `System.cmd`
+
+This is a tiny elixir program that I can use to turn on my coffee machine over the network. I have another script monitoring my dbus for successful login events, this gets called when it sees one.
+
+The main thing to look at it `lib/covfefe.rb` which has all the necessary logic. 
 
 ## Installation
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `covfefe` to your list of dependencies in `mix.exs`:
+clone the file then run `mix escript.build` after editing the `config/config.exs` file to point:
+- `wemo_ip` at your wemo switch
+- `image` at the docker image to run the wemom cli. 
 
-```elixir
-def deps do
-  [
-    {:covfefe, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/covfefe](https://hexdocs.pm/covfefe).
-
+Then you will have a nice binary in your directeory to run
