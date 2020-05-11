@@ -6,9 +6,10 @@ defmodule Covfefe do
   def main(["off"]), do: run_covfefe(:OFF)
 
   defp covfefe do
-    {{_, _, day}, _} = File.lstat!(@covfefe_file, time: :local).mtime
+    {{_, _, last_modified_day}, _} = File.lstat!(@covfefe_file, time: :local).mtime
+    {{_, _, today}, _} = :calendar.local_time()
 
-    if day != DateTime.utc_now().day do
+    if last_modified_day != today do
       run_covfefe(:ON)
       :timer.sleep(2 * 1000)
       File.touch(@covfefe_file)
