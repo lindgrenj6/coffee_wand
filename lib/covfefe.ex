@@ -1,5 +1,5 @@
 defmodule Covfefe do
-  @covfefe_file "/home/jlindgren/.covfefe"
+  @covfefe_file "#{System.get_env()["HOME"]}/.covfefe"
 
   def main([]), do: covfefe()
   def main(["on"]), do: run_covfefe(:ON)
